@@ -16,3 +16,6 @@ class Guaritore(Soldato):
 
     def __str__(self):
         return f"Guaritore: {super().__str__()}"
+
+    # def abilita_speciale(self, bersaglio):
+    #     pass

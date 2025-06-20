@@ -17,3 +17,6 @@ class Mago(Soldato):
             bersaglio.difendi(danno)
     def __str__(self):
         return f"Mago: {super().__str__()}"
+    
+    # def abilita_speciale(self, bersaglio):
+    #     pass

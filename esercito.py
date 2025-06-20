@@ -34,7 +34,9 @@ class Esercito:
                 soldato = Guaritore(input("Inserisci il nome del Guaritore: "))
                 squadra1.append(soldato)
                 self.monete -= soldato.get_costo()
-            
+            else:
+                print("Opzione non valida. Riprova.")
+                continue
             scelta = input(f"Hai speso {soldato.get_costo()} monete. Ti sono avanzati {self.monete} monete.\nVuoi continuare ad inserire soldati? (s/n): ")
             if scelta.lower() == 'n':
                 break
@@ -153,7 +155,18 @@ class Esercito:
                     if nemici_vivi:
                         bersaglio = random.choice(nemici_vivi)
                         soldato.attacca(bersaglio)
-        else:
+        
+        # elif isinstance(soldato, Cavaliere): # blocco per il Cavaliere
+        #     if not soldato.get_difesa_attiva():
+        #         soldato.abilita_speciale()
+        #     else:
+        #         if esercito_nemico:
+        #             nemici_vivi = [s for s in esercito_nemico if s.vivo()]
+        #             if nemici_vivi:
+        #                 bersaglio = random.choice(nemici_vivi)
+        #                 soldato.attacca(bersaglio)
+        
+        else: # Tutti gli altri tipi di soldati
             if esercito_nemico:
                 nemici_vivi = [s for s in esercito_nemico if s.vivo()]
                 if nemici_vivi:

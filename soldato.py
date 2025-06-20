@@ -11,6 +11,10 @@ class Soldato(ABC):
     @abstractmethod
     def attacca(self, bersaglio):
         pass
+    
+    # @abstractmethod
+    # def abilita_speciale(self, bersaglio):
+    #     pass
 
     def difendi(self, danno):
         danno_effettivo = max(0, danno - self.__difesa)

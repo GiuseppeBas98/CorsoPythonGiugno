@@ -16,3 +16,6 @@ class Arciere(Soldato):
 
     def __str__(self):
         return f"Arciere: {super().__str__()}"
+    
+    # def abilita_speciale(self, bersaglio):
+    #     pass
