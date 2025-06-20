@@ -20,6 +20,8 @@ class Soldato(ABC):
         danno_effettivo = max(0, danno - self.__difesa)
         self.set_salute(self.__salute - danno_effettivo)
         print(f"{self.__nome} subisce {danno_effettivo} danni! Salute rimanente: {self.__salute}")
+        if self.get_salute() <= 0:
+            print(f"{self.__nome} è stato sconfitto!")
         
     def vivo(self):
         return self.__salute > 0

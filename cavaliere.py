@@ -31,6 +31,9 @@ class Cavaliere(Soldato):
             danno_effettivo = max(0, danno - self.get_difesa())
             self.set_salute(self.get_salute() - danno_effettivo)
             print(f"{self.get_nome()} subisce {danno_effettivo} danni! Salute rimanente: {self.get_salute()}")
+        if self.get_salute() <= 0:
+            print(f"{self.get_nome()} è stato sconfitto!")  
+
 
     # def abilita_speciale(self):
     #     self.difesa_attiva = True
@@ -39,6 +42,6 @@ class Cavaliere(Soldato):
     def __str__(self):
         return f"Cavaliere: {super().__str__()}"
     
-    # def get_difesa_attiva(self):
-    #     return self.__difesa_attiva
+    def get_difesa_attiva(self):
+        return self.__difesa_attiva
     
