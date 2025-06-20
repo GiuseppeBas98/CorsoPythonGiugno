@@ -29,9 +29,13 @@ while esercito_giocatore and esercito_ia:
     print("\n--- Fine Round ---")
     time.sleep(3)
 
-    print(f"\nBudget Giocatore: {budget_giocatore}, Budget IA: {budget_ia}")
-    esercito_giocatore, budget_giocatore = Esercito.acquista_soldati(esercito_giocatore, budget_giocatore, True)
-    esercito_ia, budget_ia = Esercito.acquista_soldati(esercito_ia, budget_ia, False)
+
+    acquisto = input("STAI ENTRANDO NELLA FASE DI ACQUISTO NUOVI SOLDATI\nVuoi acquistare nuovi soldati? (s/n): ")
+    if acquisto.lower() == 's':
+        print(f"\nBudget Giocatore: {budget_giocatore}, Budget IA: {budget_ia}")
+        esercito_giocatore, budget_giocatore = Esercito.acquista_soldati(esercito_giocatore, budget_giocatore, True)
+        esercito_ia, budget_ia = Esercito.acquista_soldati(esercito_ia, budget_ia, False)
+    
     round_num += 1
 
 # QUI ARRIVA QUANDO UNO DEI DUE Eserciti è VUOTO
@@ -42,5 +46,3 @@ else:
 
 print(f"\nVittoria di {vincitore} in {round_num - 1} round!")
 print(f"Soldati rimasti: {len(esercito_giocatore) if esercito_giocatore else len(esercito_ia)}")
-
-
